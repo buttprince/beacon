@@ -9,14 +9,15 @@ client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}`);
 });
 
+const debateChannel = "724874922329112608";
+const possibleRoles = [
+  "762098922201546752",
+  "724873236424425562",
+  "724873702734299156",
+  "882672767818924032",
+];
+
 client.on("message", (msg) => {
-  const debateChannel = "858998284865765409";
-  const possibleRoles = [
-    "762098922201546752",
-    "724873236424425562",
-    "724873702734299156",
-    "882672767818924032",
-  ];
   const userRoles = Array.from(msg.member.roles.cache.keys());
   const canSpeak = possibleRoles.some((r) => userRoles.includes(r));
 

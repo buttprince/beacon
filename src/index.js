@@ -20,7 +20,7 @@ client.on("message", (msg) => {
   const userRoles = Array.from(msg.member.roles.cache.keys());
   const canSpeak = possibleRoles.some((r) => userRoles.includes(r));
 
-  if (msg.channel.id === debateChannel && canSpeak) {
+  if (msg.channel.id === debateChannel && !canSpeak) {
     const probability = 0.95;
     if (Math.floor(Math.random()) < probability) {
       msg.delete();
